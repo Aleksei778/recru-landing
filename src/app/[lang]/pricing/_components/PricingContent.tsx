@@ -360,7 +360,7 @@ export default function PricingContent({ lang }: PricingContentProps) {
 
                         <span className="relative">
                           {plan.id === "trial"
-                            ? t("startFree")
+                            ? t("tryRecru")
                             : `${t("choosePlan")} ${getPlanName(plan)}`}
                         </span>
                       </button>

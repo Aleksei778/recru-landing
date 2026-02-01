@@ -46,7 +46,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
-      <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
+        <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         {/* LOGO */}
         <Link href={`/${language}`} className="flex items-center z-50">
           <h1
@@ -139,7 +139,7 @@ export default function Header() {
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
                   <span className="relative flex items-center text-white dark:text-black font-semibold text-sm">
-                    {t("startFree")}
+                    {t("tryRecru")}
                     <ExternalLink className="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 group-hover:translate-x-0.5" />
                   </span>
                 </Link>
@@ -149,7 +149,7 @@ export default function Header() {
                     disabled
                     className="px-5 py-2.5 rounded-xl bg-gray-400 dark:bg-gray-600 text-white font-semibold text-sm opacity-70 cursor-not-allowed"
                   >
-                    {t("startFree")}
+                    {t("tryRecru")}
                   </button>
 
                   <div className="absolute top-full right-0 mt-2 w-64 p-3 bg-white dark:bg-gray-900 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200 dark:border-gray-700">
@@ -306,7 +306,7 @@ export default function Header() {
                     <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
 
                     <span className="relative flex items-center justify-center text-white dark:text-black font-semibold text-lg">
-                      {t("startFree")}
+                      {t("tryRecru")}
                       <ExternalLink className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                     </span>
                   </Link>
@@ -315,7 +315,7 @@ export default function Header() {
                     disabled
                     className="w-full px-6 py-4 rounded-xl bg-gray-400 dark:bg-gray-600 text-white font-semibold text-lg opacity-70 cursor-not-allowed"
                   >
-                    {t("startFree")}
+                    {t("tryRecru")}
                   </button>
                 )}
               </div>
@@ -345,6 +345,7 @@ export default function Header() {
           </div>
         </div>
       </div>
+        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
     </header>
   );
 }

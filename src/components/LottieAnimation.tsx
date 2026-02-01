@@ -28,8 +28,6 @@ const Player = dynamic(
 export default function ClientLottieAnimation() {
   const { theme } = useTheme();
 
-  console.log("Current theme in animation:", theme); // Для отладки
-
   return (
     <div className={theme === "dark" ? "dark" : ""}>
       <Player

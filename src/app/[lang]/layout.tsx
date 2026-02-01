@@ -102,6 +102,7 @@ export default async function RootLayout({
             <AuthProvider>
               <Header />
               {children}
+                <div className="w-full h-px bg-black dark:bg-white rounded-full" />
               <Footer />
             </AuthProvider>
           </LanguageProvider>

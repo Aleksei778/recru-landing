@@ -1,35 +1,49 @@
-import { supabaseAdmin } from "@/lib/supabaseAdmin";
 import ProfileTabs from "./_components/ProfileTabs";
-import { getServerSession } from "next-auth";
-import { authOptions } from "@/app/api/auth/[...nextauth]/route";
+import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
 export default async function ProfilePage() {
-  const session = await getServerSession(authOptions);
-  if (!session?.user?.email) redirect("/en/login");
+  const cookieStore = await cookies();
+  const token = cookieStore.get("token")?.value; // или как у вас называется cookie с токеном
 
-  const { data: userData, error } = await supabaseAdmin
-    .from("users")
-    .select("*")
-    .eq("email", session.user.email)
-    .single();
-
-  if (error || !userData) {
-    console.error("Error fetching user or user not found:", error);
+  if (!token) {
     redirect("/en/login");
   }
 
-  const isManager = session.user.email === process.env.MANAGER_EMAIL;
+  try {
+    // Запрос к вашему бэкенду для получения данных пользователя
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_API_URL}/api/user/profile`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        cache: "no-store", // или "force-cache" в зависимости от нужд
+      },
+    );
 
-  return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <main className="pt-24 pb-12 px-4 container mx-auto max-w-6xl">
-        <ProfileTabs
-          sessionUser={session.user}
-          userData={userData}
-          isManager={isManager}
-        />
-      </main>
-    </div>
-  );
+    if (!response.ok) {
+      redirect("/en/login");
+    }
+
+    const userData = await response.json();
+
+    const isManager = userData.email === process.env.MANAGER_EMAIL;
+
+    return (
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <main className="pt-24 pb-12 px-4 container mx-auto max-w-6xl">
+          <ProfileTabs
+            sessionUser={userData}
+            userData={userData}
+            isManager={isManager}
+          />
+        </main>
+      </div>
+    );
+  } catch (error) {
+    console.error("Error fetching user data:", error);
+    redirect("/en/login");
+  }
 }

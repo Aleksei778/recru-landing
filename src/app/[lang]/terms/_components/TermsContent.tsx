@@ -33,7 +33,7 @@ export default function TermsContent({ lang }: TermsContentProps) {
                 {t("terms.title")}
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                {t("terms.lastUpdated")}
+                {t("terms.lastUpdated")} {new Date().toLocaleDateString()}
               </p>
             </div>
 

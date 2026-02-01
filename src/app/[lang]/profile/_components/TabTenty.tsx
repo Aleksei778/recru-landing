@@ -4,7 +4,6 @@ import { useState } from "react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { ArrowRight, ArrowLeft, Check } from "lucide-react";
 import { FORM_CONSTANTS, ReportData } from "@/lib/tenty-form";
-import TentyInfo from "@/components/TentyInfo";
 import { useSession } from "next-auth/react";
 import { validateStep } from "@/lib/reportValidation";
 
@@ -183,7 +182,7 @@ export default function TentyReportForm() {
 
   return (
     <div className="max-w-4xl mx-auto p-6">
-      <TentyInfo />
+      {/*<TentyInfo />*/}
 
       <div className="mb-8">
         <div className="flex justify-between mb-2">

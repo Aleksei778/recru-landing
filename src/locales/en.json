@@ -1,7 +1,7 @@
 {
   "title": "Recru",
-  "description": "QuickSend is a modern service for mass sending emails in Gmail.",
-  "startFree": "Start for free",
+  "description": "Recru is a modern service that automates modern hiring processes.",
+  "tryRecru": "Try Recru",
   "learnMore": "Learn more",
   "whyTitle": "Why QuickSend?",
   "whyDesc": "We guarantee an easy-to-use platform that optimizes your outreach and minimizes spam issues.",
@@ -61,7 +61,7 @@
     "standardButton": "Choose Standard",
     "premiumButton": "Choose Premium",
     "features": {
-      "trial": ["50 emails/day", "Basic features", "Email support"],
+      "trial": ["2 vacanc", "50 candidates", "Email support"],
       "standard": ["500 emails/day", "Advanced features", "Priority support"],
       "premium": ["Unlimited emails", "All features", "Priority support"]
     }
@@ -80,7 +80,7 @@
     "continueWithGoogle": "Continue with Google",
     "securityNote": "Secure login · Privacy protected"
   },
-  "copyright": " QuickSend, inc. All rights reserved.",
+  "copyright": "Recru, inc. All rights reserved.",
   "privacyFooterTitle": "Privacy Policy",
   "termsFooterTitle": "Terms of Use",
   "faqFooter": "FAQ",
@@ -197,7 +197,7 @@
   },
   "terms": {
     "title": "Quicksend Terms of Use and Anti-Spam Policy",
-    "lastUpdated": "Last Time Updated: February, 2025",
+    "lastUpdated": "Last Time Updated: ",
     "intro": "Please note that your use of and access to our services (defined below) are subject to the following terms; if you do not agree to all of the following, you may not use or access the services in any manner.\n\nThese Terms of Use (the \"Terms\") are a binding contract between you and QuickSend, Inc. (\"QuickSend\", \"we\" and \"us\"). If you have any questions, comments, or concerns regarding these terms or the Services, please contact us at support@quicksend.zendesk.com.\n\nYou must agree to and accept all of the Terms, or you don't have the right to use the Services. Your using the Services in any way means that you agree to all of these Terms, and these Terms will remain in effect while you use the Services. These Terms include the provisions in this document, as well as those in the Privacy Policy.",
     "termsChange": "Will these Terms ever change?",
     "termsChangeText": "We are constantly improving our Services, so these Terms may need to change along with the Services. We reserve the right to change the Terms at any time, but if we do, we will bring it to your attention by placing a notice on the QuickSend website, and/or by sending you an email, and/or by some other means.\n\nIf you don't agree with the new Terms, you are free to reject them; unfortunately, that means you will no longer be able to use the Services. If you use the Services in any way after a change to the Terms is effective, that means you agree to all of the changes.",
@@ -234,7 +234,7 @@
   },
   "privacy": {
     "title": "QuickSend Privacy Information: What data does our server store?",
-    "lastUpdated": "Last Time Updated: February, 2025",
+    "lastUpdated": "Last Time Updated: ",
     "intro": "Many users are concerned about the privacy of their email marketing lists and whether QuickSend stores their email addresses and the contents of email messages, and whether any of this data is shared with third parties. The information below is meant to address these concerns.",
     "overview": "Overview of how QuickSend works",
     "overviewText": "QuickSend works by transferring data to and from your email account. Most of this data transfer occurs via numeric identifiers specific to email and the API. In some cases, email addresses are transferred from the QuickSend server back to the interface, but in a secure manner over SSL. Email providers do not allow third-party integrations like QuickSend to connect to account data without the use of SSL.",
@@ -255,7 +255,7 @@
   },
   "faq": {
     "title": "FAQ",
-    "lastUpdated": "Last Time Updated: February, 2025",
+    "lastUpdated": "Last Time Updated: ",
     "searchPlaceholder": "Search...",
     "noResults": "No matching questions found",
     "topics": {

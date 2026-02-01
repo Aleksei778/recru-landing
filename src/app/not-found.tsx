@@ -1,4 +1,5 @@
 // app/not-found.tsx
+
 import Link from "next/link";
 import { headers } from "next/headers";
 import NotFoundAnimation from "@/components/LottieAnimation";

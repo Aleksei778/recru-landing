@@ -16,7 +16,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-black transition-colors"
+      className="relative py-20 px-4 sm:px-6 overflow-hidden bg-white dark:bg-black"
     >
       <div className="container mx-auto text-center max-w-4xl">
         <h2 className="text-4xl font-bold mb-8 text-black dark:text-white">
@@ -42,7 +42,7 @@ export function ContactSection() {
             playsInline
             className="w-full h-full object-cover grayscale"
           >
-            <source src="/animations/5.webm" type="video/webm" />
+            <source src="/animations/business-video.webm" type="video/webm" />
             Your browser does not support the video tag.
           </video>
         </div>

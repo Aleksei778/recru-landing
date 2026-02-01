@@ -135,7 +135,7 @@ export default function FAQContent({ lang }: FAQContentProps) {
             {t("faq.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            {t("faq.lastUpdated")}
+            {t("faq.lastUpdated")} {new Date().toLocaleDateString()}
           </p>
         </section>
 
@@ -149,7 +149,7 @@ export default function FAQContent({ lang }: FAQContentProps) {
               onChange={(e) => setSearchTerm(e.target.value)}
               className="w-full pl-14 pr-6 py-4 rounded-full border-2 border-gray-200 dark:border-gray-700 
                        bg-white dark:bg-gray-800 text-gray-900 dark:text-white
-                       focus:outline-none focus:border-blue-500 dark:focus:border-blue-400 
+                       focus:outline-none focus:border-blue-500 dark:focus:border-gray-400
                        transition-colors text-lg"
             />
           </div>

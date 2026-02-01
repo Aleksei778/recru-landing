@@ -3,6 +3,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/useTranslation";
 import Link from "next/link";
 import Image from "next/image";
+import {Player} from "@lottiefiles/react-lottie-player";
 
 export function HeroSection() {
   const { language } = useLanguage();
@@ -11,7 +12,7 @@ export function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative pt-24 pb-20 px-4 bg-white dark:bg-black transition-colors h-[600px] overflow-hidden"
+      className="relative pt-24 pb-20 px-4 bg-white dark:bg-black transition-colors h-[800px] overflow-hidden"
     >
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-gradient-to-br from-gray-300 to-gray-100 dark:from-gray-700 dark:to-gray-800 rounded-full mix-blend-multiply dark:mix-blend-screen filter blur-3xl opacity-20 dark:opacity-15 animate-blob"></div>
@@ -37,7 +38,7 @@ export function HeroSection() {
               >
                 <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
                 <span className="relative flex items-center justify-center text-white dark:text-black text-lg font-semibold tracking-wide">
-                  {t("startFree")}
+                  {t("tryRecru")}
                   <svg
                     className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1 group-hover:rotate-3"
                     fill="none"
@@ -89,27 +90,31 @@ export function HeroSection() {
           </div>
 
           <div className="relative w-[320px] h-[320px] lg:w-[370px] lg:h-[590px] flex-shrink-0 order-1 lg:order-1 mt-auto">
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 dark:from-gray-700/30 to-transparent rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute -inset-4 bg-gradient-to-r from-gray-200/20 dark:from-gray-800/20 to-transparent rounded-full blur-lg"></div>
-            <Image
-              src="/images/image.png"
-              alt="Hero Left"
-              fill
-              className="object-contain relative z-10 drop-shadow-lg animate-fade-in-up grayscale"
-              priority
-            />
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 dark:from-gray-300/30 to-transparent rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute -inset-4 bg-gradient-to-r from-gray-400/20 dark:from-gray-600/20 to-transparent rounded-full blur-lg"></div>
+              <Player
+                  autoplay
+                  loop
+                  src="/animations/business-workshop.json"
+                  style={{
+                      width: "100%",
+                      height: "auto",
+                      maxWidth: "600px",
+                      maxHeight: "600px",
+                  }}
+              />
           </div>
 
-          <div className="relative w-[380px] h-[420px] lg:w-[490px] lg:h-[600px] flex-shrink-0 order-3 lg:order-3 mt-auto lg:mr-[-120px]">
-            <div className="absolute inset-0 bg-gradient-to-bl from-gray-400/30 dark:from-gray-600/30 to-transparent rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute -inset-4 bg-gradient-to-l from-gray-300/20 dark:from-gray-700/20 to-transparent rounded-full blur-lg"></div>
-            <Image
-              src="/images/image-1.png"
-              alt="Hero Right"
-              fill
-              className="object-contain relative z-10 drop-shadow-lg animate-fade-in-up grayscale"
-            />
-          </div>
+          {/*<div className="relative w-[380px] h-[420px] lg:w-[490px] lg:h-[600px] flex-shrink-0 order-3 lg:order-3 mt-auto lg:mr-[-120px]">*/}
+          {/*    <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 dark:from-gray-300/30 to-transparent rounded-full blur-3xl animate-pulse"></div>*/}
+          {/*    <div className="absolute -inset-4 bg-gradient-to-r from-gray-400/20 dark:from-gray-600/20 to-transparent rounded-full blur-lg"></div>*/}
+          {/*  <Image*/}
+          {/*    src="/images/girl-with-comp.png"*/}
+          {/*    alt="Hero Right"*/}
+          {/*    fill*/}
+          {/*    className="object-contain relative z-10 drop-shadow-lg animate-fade-in-up grayscale "*/}
+          {/*  />*/}
+          {/*</div>*/}
         </div>
       </div>
     </section>

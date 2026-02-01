@@ -22,7 +22,7 @@ export default function PrivacyContent({ lang }: PrivacyContentProps) {
                 {t("privacy.title")}
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                {t("privacy.lastUpdated")}
+                {t("privacy.lastUpdated")} {new Date().toLocaleDateString()}
               </p>
             </div>
 
