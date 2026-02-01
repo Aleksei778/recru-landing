@@ -1,0 +1,350 @@
+"use client";
+
+import { useTheme } from "@/contexts/theme-context";
+import { useLanguage } from "@/contexts/language-context";
+import { useSession } from "next-auth/react";
+import Link from "next/link";
+import { nauryzRedKeds } from "@/lib/font";
+import Image from "next/image";
+import {
+  Globe,
+  UserCircle,
+  Moon,
+  Sun,
+  Menu,
+  X,
+  ExternalLink,
+  Chrome,
+  AlertCircle,
+  CheckCircle,
+} from "lucide-react";
+import { useTranslation } from "@/hooks/useTranslation";
+import { useState, useEffect } from "react";
+
+export default function Header() {
+  const { language, toggleLanguage } = useLanguage();
+  const { theme, toggleTheme } = useTheme();
+  const { data: session } = useSession();
+  const { t } = useTranslation();
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [canInstall, setCanInstall] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    // Проверка устройства и браузера
+    const userAgent = navigator.userAgent;
+    const isChromeBrowser =
+      /chrome|chromium|crios/i.test(userAgent) && !/edg/i.test(userAgent);
+    const isMobileDevice =
+      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        userAgent,
+      );
+
+    setIsMobile(isMobileDevice);
+    setCanInstall(isChromeBrowser && !isMobileDevice);
+  }, []);
+
+  return (
+    <header className="fixed top-0 w-full bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
+      <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
+        {/* LOGO */}
+        <Link href={`/${language}`} className="flex items-center z-50">
+          <h1
+            className={`text-2xl md:text-3xl font-bold text-black dark:text-white ${nauryzRedKeds.className}`}
+          >
+            RECRU
+          </h1>
+        </Link>
+
+        {/* NAV — Desktop */}
+        <nav className="hidden md:flex space-x-6 lg:space-x-8 font-medium">
+          <Link
+            href={`/${language}#whyquicksend`}
+            className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 group"
+          >
+            {t("header.aboutUs")}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"></span>
+          </Link>
+
+          <Link
+            href={`/${language}#products`}
+            className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 group"
+          >
+            {t("header.products")}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"></span>
+          </Link>
+
+          <Link
+            href={`/${language}/pricing`}
+            className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 group"
+          >
+            {t("header.pricing")}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"></span>
+          </Link>
+
+          <Link
+            href={`/${language}#contact`}
+            className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 group"
+          >
+            {t("header.contact")}
+            <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-black dark:bg-white group-hover:w-full transition-all duration-300"></span>
+          </Link>
+        </nav>
+
+        {/* RIGHT SIDE — Desktop */}
+        <div className="hidden md:flex items-center space-x-3 lg:space-x-4">
+          {/* Theme toggle */}
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-all duration-300"
+            aria-label="Toggle theme"
+          >
+            {theme === "light" ? (
+              <Moon className="w-5 h-5 text-gray-700" />
+            ) : (
+              <Sun className="w-5 h-5 text-gray-300" />
+            )}
+          </button>
+
+          {/* Language toggle */}
+          <button
+            onClick={toggleLanguage}
+            className="flex items-center space-x-2 px-3 py-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-all duration-300 group"
+          >
+            <Globe className="w-4 h-4 text-gray-700 dark:text-gray-400 group-hover:text-black dark:group-hover:text-white transition-colors" />
+            <span className="font-medium text-gray-700 dark:text-gray-300 group-hover:text-black dark:group-hover:text-white transition-colors">
+              {language === "ru" ? "EN" : "RU"}
+            </span>
+          </button>
+
+          {/* Auth */}
+          {!session ? (
+            <div className="flex items-center space-x-3">
+              <Link
+                href={`/${language}/login`}
+                className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 font-medium"
+              >
+                {t("header.signIn")}
+              </Link>
+
+              {canInstall ? (
+                <Link
+                  href={`/${language}/auth/register`}
+                  className="group relative px-5 py-2.5 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20"
+                >
+                  {/* Основной градиент */}
+                  <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
+
+                  {/* Анимированная полоска света */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+
+                  <span className="relative flex items-center text-white dark:text-black font-semibold text-sm">
+                    {t("startFree")}
+                    <ExternalLink className="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 group-hover:translate-x-0.5" />
+                  </span>
+                </Link>
+              ) : (
+                <div className="relative group">
+                  <button
+                    disabled
+                    className="px-5 py-2.5 rounded-xl bg-gray-400 dark:bg-gray-600 text-white font-semibold text-sm opacity-70 cursor-not-allowed"
+                  >
+                    {t("startFree")}
+                  </button>
+
+                  <div className="absolute top-full right-0 mt-2 w-64 p-3 bg-white dark:bg-gray-900 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200 dark:border-gray-700">
+                    <div className="flex items-start gap-2">
+                      <AlertCircle className="w-5 h-5 text-gray-700 dark:text-gray-300 mt-0.5 flex-shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-1">
+                          {isMobile ? t("isMobile.title") : t("isChrome.title")}
+                        </p>
+                        <p className="text-xs text-gray-600 dark:text-gray-400">
+                          {isMobile ? t("isMobile.desc") : t("isChrome.desc")}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="absolute -top-2 right-4 w-4 h-4 bg-white dark:bg-gray-900 rotate-45 border-l border-t border-gray-200 dark:border-gray-700"></div>
+                  </div>
+                </div>
+              )}
+            </div>
+          ) : (
+            <Link
+              href={`/${language}/profile`}
+              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all duration-300"
+            >
+              <UserCircle className="w-6 h-6 text-gray-700 dark:text-gray-400" />
+            </Link>
+          )}
+        </div>
+
+        {/* MOBILE BURGER */}
+        <button
+          className="md:hidden p-2 relative z-50 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+          onClick={() => setMobileOpen(!mobileOpen)}
+          aria-label={mobileOpen ? "Close menu" : "Open menu"}
+        >
+          {mobileOpen ? (
+            <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+          ) : (
+            <Menu className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+          )}
+        </button>
+      </div>
+
+      {/* MOBILE MENU */}
+      <div
+        className={`md:hidden fixed inset-0 bg-white dark:bg-black transition-all duration-300 ease-in-out ${mobileOpen ? "opacity-100 visible" : "opacity-0 invisible"}`}
+      >
+        <div className="container mx-auto px-6 pt-20 pb-8 h-full flex flex-col">
+          {/* Закрывающая кнопка */}
+          <button
+            className="absolute top-5 right-4 p-2 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800"
+            onClick={() => setMobileOpen(false)}
+            aria-label="Close menu"
+          >
+            <X className="w-6 h-6 text-gray-700 dark:text-gray-300" />
+          </button>
+
+          {/* Меню навигации */}
+          <nav className="flex-1 space-y-6 font-medium">
+            <Link
+              href={`/${language}#whyquicksend`}
+              className="block text-2xl font-semibold text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t("header.aboutUs")}
+            </Link>
+
+            <Link
+              href={`/${language}#products`}
+              className="block text-2xl font-semibold text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t("header.products")}
+            </Link>
+
+            <Link
+              href={`/${language}/pricing`}
+              className="block text-2xl font-semibold text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t("header.pricing")}
+            </Link>
+
+            <Link
+              href={`/${language}#contact`}
+              className="block text-2xl font-semibold text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors"
+              onClick={() => setMobileOpen(false)}
+            >
+              {t("header.contact")}
+            </Link>
+          </nav>
+          {!canInstall && (
+            <div className="mb-6 p-4 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
+              <div className="flex items-center gap-3">
+                <AlertCircle className="w-5 h-5 text-gray-700 dark:text-gray-300 flex-shrink-0" />
+                <div>
+                  <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+                    {isMobile ? t("isMobile.title") : t("isChrome.title")}
+                  </p>
+                  <p className="text-xs text-gray-600 dark:text-gray-400">
+                    {isMobile ? t("isMobile.desc") : t("isChrome.desc")}
+                  </p>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Управление и авторизация */}
+          <div className="space-y-6">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-4">
+                {/* Theme toggle */}
+                <button
+                  onClick={toggleTheme}
+                  className="p-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                  aria-label="Toggle theme"
+                >
+                  {theme === "light" ? (
+                    <Moon className="w-6 h-6 text-gray-700" />
+                  ) : (
+                    <Sun className="w-6 h-6 text-gray-300" />
+                  )}
+                </button>
+
+                {/* Language toggle */}
+                <button
+                  onClick={toggleLanguage}
+                  className="flex items-center gap-2 px-4 py-3 rounded-xl bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+                >
+                  <Globe className="w-5 h-5 text-gray-700 dark:text-gray-300" />
+                  <span className="font-medium text-gray-700 dark:text-gray-300">
+                    {language === "ru" ? "EN" : "RU"}
+                  </span>
+                </button>
+              </div>
+            </div>
+
+            {!session ? (
+              <div className="space-y-4">
+                <Link
+                  href={`/${language}/login`}
+                  className="block px-6 py-4 text-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-colors text-lg font-medium border border-gray-300 dark:border-gray-700"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  {t("header.signIn")}
+                </Link>
+
+                {canInstall ? (
+                  <Link
+                    href={`/${language}/auth/register`}
+                    className="group relative block px-6 py-4 text-center rounded-xl overflow-hidden transition-all duration-300"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
+
+                    <span className="relative flex items-center justify-center text-white dark:text-black font-semibold text-lg">
+                      {t("startFree")}
+                      <ExternalLink className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
+                    </span>
+                  </Link>
+                ) : (
+                  <button
+                    disabled
+                    className="w-full px-6 py-4 rounded-xl bg-gray-400 dark:bg-gray-600 text-white font-semibold text-lg opacity-70 cursor-not-allowed"
+                  >
+                    {t("startFree")}
+                  </button>
+                )}
+              </div>
+            ) : (
+              <Link
+                href={`/${language}/profile`}
+                className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                onClick={() => setMobileOpen(false)}
+              >
+                <UserCircle className="w-7 h-7 text-gray-700 dark:text-gray-300" />
+                <span className="text-lg font-medium text-gray-800 dark:text-white">
+                  Профиль
+                </span>
+              </Link>
+            )}
+
+            <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 pt-4">
+              <div
+                className={`w-2 h-2 rounded-full ${canInstall ? "bg-gray-700 dark:bg-gray-300" : "bg-gray-400"} animate-pulse`}
+              ></div>
+              <span>
+                {canInstall
+                  ? "Compatible with your Browser"
+                  : `${isMobile ? "Мобильное устройство" : "Требуется Chrome"}`}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+  );
+}
