@@ -33,7 +33,7 @@ export function HeroSection() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <Link
-                href={`/${language}/login`}
+                href="https://recru-hr.vercel.app"
                 className="group relative px-8 py-4 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-xl hover:shadow-gray-500/20 dark:hover:shadow-gray-400/10"
               >
                 <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>

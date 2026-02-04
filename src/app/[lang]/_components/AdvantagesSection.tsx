@@ -62,7 +62,7 @@ export function AdvantagesSection() {
                   <div
                     key={i}
                     className="
-                      bg-white dark:bg-gray-800
+                      bg-white dark:bg-gray-900
                       border border-black dark:border-white
                       p-5 sm:p-6
                       rounded-xl

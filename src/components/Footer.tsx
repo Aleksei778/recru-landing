@@ -73,15 +73,13 @@ export default function Footer() {
                       className="fill-black dark:fill-white"
                     />
 
-                    <g transform="translate(25 25)">
-                      <path
-                        className="fill-white dark:fill-black"
-                        fillRule="evenodd"
-                        clipRule="evenodd"
-                        transform="translate(-25 -25)"
-                        d="M31.5 38c-2.8 0-4.1-.4-6.4-2-1.4 1.8-6 3.3-6.2.8 0-1.8-.4-3.4-.9-5.1-.5-2.1-1.2-4.5-1.2-7.9 0-8.1 6.7-14.2 14.6-14.2 7.9 0 14.1 6.4 14.1 14.3 0 7.8-6.2 14.1-14 14.1m.1-21.4c-3.8-.2-6.8 2.5-7.5 6.6-.5 3.5.4 7.7 1.3 7.9.4.1 1.4-.7 2-1.3 1.2.8 2.6 1.3 3.5 1.2 4 .2 7.4-2.8 7.7-6.8.2-4-2.9-7.4-6.9-7.6z"
-                      />
-                    </g>
+                    <path
+                      className="fill-white dark:fill-black"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
+                      d="M31.5 29c-2.8 0-4.1-.4-6.4-2-1.4 1.8-6 3.3-6.2.8 0-1.8-.4-3.4-.9-5.1-.5-2.1-1.2-4.5-1.2-7.9 0-8.1 6.7-14.2 14.6-14.2 7.9 0 14.1 6.4 14.1 14.3 0 7.8-6.2 14.1-14 14.1m.1-21.4c-3.8-.2-6.8 2.5-7.5 6.6-.5 3.5.4 7.7 1.3 7.9.4.1 1.4-.7 2-1.3 1.2.8 2.6 1.3 3.5 1.2 4 .2 7.4-2.8 7.7-6.8.2-4-2.9-7.4-6.9-7.6z"
+                      transform="translate(0, 9)"
+                    />
                   </svg>
                 </svg>
               </Link>
@@ -90,8 +88,7 @@ export default function Footer() {
 
           <div className="text-center flex items-center justify-center">
             <p className="text-gray-300">
-              {currentYear}
-              {t("copyright")}
+              {currentYear} {t("copyright")}
             </p>
           </div>
 

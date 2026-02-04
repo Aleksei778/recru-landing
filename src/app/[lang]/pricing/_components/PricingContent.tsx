@@ -6,6 +6,7 @@ import { Rocket, Star, Crown, Check, X } from "lucide-react";
 import { useTheme } from "@/contexts/theme-context";
 import { useTranslation } from "@/hooks/useTranslation";
 import Image from "next/image";
+import Link from "next/link";
 
 interface PlanFeature {
   textRu: string;
@@ -326,7 +327,8 @@ export default function PricingContent({ lang }: PricingContentProps) {
                         ))}
                       </ul>
 
-                      <button
+                      <Link
+                        href="https://recru-admin.vercel.app"
                         className={`group relative w-full py-3 rounded-lg font-semibold transition-all duration-300 overflow-hidden ${
                           plan.isPopular
                             ? "bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200"
@@ -340,7 +342,7 @@ export default function PricingContent({ lang }: PricingContentProps) {
                             ? t("tryRecru")
                             : `${t("choosePlan")} ${getPlanName(plan)}`}
                         </span>
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 );

@@ -5,21 +5,9 @@ import { useLanguage } from "@/contexts/language-context";
 import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { nauryzRedKeds } from "@/lib/font";
-import Image from "next/image";
-import {
-  Globe,
-  UserCircle,
-  Moon,
-  Sun,
-  Menu,
-  X,
-  ExternalLink,
-  Chrome,
-  AlertCircle,
-  CheckCircle,
-} from "lucide-react";
+import { Globe, UserCircle, Moon, Sun, Menu, X } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 export default function Header() {
   const { language, toggleLanguage } = useLanguage();
@@ -27,22 +15,6 @@ export default function Header() {
   const { data: session } = useSession();
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [canInstall, setCanInstall] = useState(true);
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    // Проверка устройства и браузера
-    const userAgent = navigator.userAgent;
-    const isChromeBrowser =
-      /chrome|chromium|crios/i.test(userAgent) && !/edg/i.test(userAgent);
-    const isMobileDevice =
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        userAgent,
-      );
-
-    setIsMobile(isMobileDevice);
-    setCanInstall(isChromeBrowser && !isMobileDevice);
-  }, []);
 
   return (
     <header className="fixed top-0 w-full bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
@@ -119,56 +91,16 @@ export default function Header() {
 
           {/* Auth */}
           {!session ? (
-            <div className="flex items-center space-x-3">
-              <Link
-                href={`/${language}/login`}
-                className="px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-all duration-300 font-medium"
-              >
-                {t("header.signIn")}
-              </Link>
-
-              {canInstall ? (
-                <Link
-                  href={`/${language}/auth/register`}
-                  className="group relative px-5 py-2.5 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20"
-                >
-                  {/* Основной градиент */}
-                  <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
-
-                  {/* Анимированная полоска света */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-
-                  <span className="relative flex items-center text-white dark:text-black font-semibold text-sm">
-                    {t("tryRecru")}
-                    <ExternalLink className="w-3.5 h-3.5 ml-1.5 transition-transform duration-300 group-hover:translate-x-0.5" />
-                  </span>
-                </Link>
-              ) : (
-                <div className="relative group">
-                  <button
-                    disabled
-                    className="px-5 py-2.5 rounded-xl bg-gray-400 dark:bg-gray-600 text-white font-semibold text-sm opacity-70 cursor-not-allowed"
-                  >
-                    {t("tryRecru")}
-                  </button>
-
-                  <div className="absolute top-full right-0 mt-2 w-64 p-3 bg-white dark:bg-gray-900 rounded-xl shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 border border-gray-200 dark:border-gray-700">
-                    <div className="flex items-start gap-2">
-                      <AlertCircle className="w-5 h-5 text-gray-700 dark:text-gray-300 mt-0.5 flex-shrink-0" />
-                      <div>
-                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 mb-1">
-                          {isMobile ? t("isMobile.title") : t("isChrome.title")}
-                        </p>
-                        <p className="text-xs text-gray-600 dark:text-gray-400">
-                          {isMobile ? t("isMobile.desc") : t("isChrome.desc")}
-                        </p>
-                      </div>
-                    </div>
-                    <div className="absolute -top-2 right-4 w-4 h-4 bg-white dark:bg-gray-900 rotate-45 border-l border-t border-gray-200 dark:border-gray-700"></div>
-                  </div>
-                </div>
-              )}
-            </div>
+            <Link
+              href="https://recru-hr.vercel.app"
+              className="group relative px-5 py-2.5 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20"
+            >
+              <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              <span className="relative text-white dark:text-black font-semibold text-sm">
+                {t("tryRecru")}
+              </span>
+            </Link>
           ) : (
             <Link
               href={`/${language}/profile`}
@@ -241,21 +173,6 @@ export default function Header() {
               {t("header.contact")}
             </Link>
           </nav>
-          {!canInstall && (
-            <div className="mb-6 p-4 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-300 dark:border-gray-700">
-              <div className="flex items-center gap-3">
-                <AlertCircle className="w-5 h-5 text-gray-700 dark:text-gray-300 flex-shrink-0" />
-                <div>
-                  <p className="text-sm font-semibold text-gray-800 dark:text-gray-200">
-                    {isMobile ? t("isMobile.title") : t("isChrome.title")}
-                  </p>
-                  <p className="text-xs text-gray-600 dark:text-gray-400">
-                    {isMobile ? t("isMobile.desc") : t("isChrome.desc")}
-                  </p>
-                </div>
-              </div>
-            </div>
-          )}
 
           {/* Управление и авторизация */}
           <div className="space-y-6">
@@ -288,60 +205,28 @@ export default function Header() {
             </div>
 
             {!session ? (
-              <div className="space-y-4">
-                <Link
-                  href={`/${language}/login`}
-                  className="block px-6 py-4 text-center text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white hover:bg-gray-100 dark:hover:bg-gray-800 rounded-xl transition-colors text-lg font-medium border border-gray-300 dark:border-gray-700"
-                  onClick={() => setMobileOpen(false)}
-                >
-                  {t("header.signIn")}
-                </Link>
-
-                {canInstall ? (
-                  <Link
-                    href={`/${language}/auth/register`}
-                    className="group relative block px-6 py-4 text-center rounded-xl overflow-hidden transition-all duration-300"
-                    onClick={() => setMobileOpen(false)}
-                  >
-                    <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
-
-                    <span className="relative flex items-center justify-center text-white dark:text-black font-semibold text-lg">
-                      {t("tryRecru")}
-                      <ExternalLink className="w-5 h-5 ml-2 transition-transform duration-300 group-hover:translate-x-1" />
-                    </span>
-                  </Link>
-                ) : (
-                  <button
-                    disabled
-                    className="w-full px-6 py-4 rounded-xl bg-gray-400 dark:bg-gray-600 text-white font-semibold text-lg opacity-70 cursor-not-allowed"
-                  >
-                    {t("tryRecru")}
-                  </button>
-                )}
-              </div>
+              <Link
+                href="https://recru-hr.vercel.app"
+                className="group relative block px-6 py-4 text-center rounded-xl overflow-hidden transition-all duration-300"
+                onClick={() => setMobileOpen(false)}
+              >
+                <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
+                <span className="relative text-white dark:text-black font-semibold text-lg">
+                  {t("tryRecru")}
+                </span>
+              </Link>
             ) : (
               <Link
-                href={`/${language}/profile`}
+                href="https://recru-hr.vercel.app"
                 className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 <UserCircle className="w-7 h-7 text-gray-700 dark:text-gray-300" />
                 <span className="text-lg font-medium text-gray-800 dark:text-white">
-                  Профиль
+                  {t("profile.profileInfo") || "Профиль"}
                 </span>
               </Link>
             )}
-
-            <div className="flex items-center justify-center gap-2 text-sm text-gray-500 dark:text-gray-400 pt-4">
-              <div
-                className={`w-2 h-2 rounded-full ${canInstall ? "bg-gray-700 dark:bg-gray-300" : "bg-gray-400"} animate-pulse`}
-              ></div>
-              <span>
-                {canInstall
-                  ? "Compatible with your Browser"
-                  : `${isMobile ? "Мобильное устройство" : "Требуется Chrome"}`}
-              </span>
-            </div>
           </div>
         </div>
       </div>

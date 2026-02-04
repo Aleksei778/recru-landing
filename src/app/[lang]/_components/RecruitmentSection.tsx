@@ -57,26 +57,26 @@ export default function RecruitmentSection() {
   const features = [
     {
       icon: Users,
-      title: "Управление кандидатами",
-      desc: "Централизованная база всех кандидатов с историей взаимодействий",
+      title: "dsp.features.candidates.title",
+      desc: "dsp.features.candidates.description",
       iconBg: "bg-gray-100 dark:bg-gray-800",
     },
     {
       icon: Target,
-      title: "AI-скрининг",
-      desc: "Автоматическая оценка технических навыков кандидатов",
+      title: "dsp.features.screening.title",
+      desc: "dsp.features.screening.description",
       iconBg: "bg-gray-100 dark:bg-gray-800",
     },
     {
       icon: Zap,
-      title: "Быстрый найм",
-      desc: "Сокращаем время закрытия вакансий в 2 раза",
+      title: "dsp.features.fast_hiring.title",
+      desc: "dsp.features.fast_hiring.description",
       iconBg: "bg-gray-100 dark:bg-gray-800",
     },
     {
       icon: FileCheck,
-      title: "Парсинг резюме",
-      desc: "Автоматическое извлечение данных из резюме любого формата",
+      title: "dsp.features.parsing.title",
+      desc: "dsp.features.parsing.description",
       iconBg: "bg-gray-100 dark:bg-gray-800",
     },
   ];
@@ -169,10 +169,10 @@ export default function RecruitmentSection() {
                     </div>
                   </div>
                   <h3 className="text-xl font-bold mb-3 text-black dark:text-white">
-                    {title}
+                    {t(title)}
                   </h3>
 
-                  <p className="text-gray-700 dark:text-gray-300">{desc}</p>
+                  <p className="text-gray-700 dark:text-gray-300">{t(desc)}</p>
                 </div>
               </div>
             ))}
