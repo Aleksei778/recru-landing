@@ -32,7 +32,7 @@ const Player = dynamic(
   },
 );
 
-export default function RecruitmentSection() {
+export function RecruitmentSection() {
   const { language } = useLanguage();
   const { t } = useTranslation();
   const [isMobile, setIsMobile] = useState(false);
