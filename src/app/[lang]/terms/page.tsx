@@ -9,13 +9,13 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    ru: "Условия использования - QuickSend",
-    en: "Terms of Use - QuickSend",
+    ru: "Условия использования - Recru",
+    en: "Terms of Use - Recru",
   };
 
   const descriptions = {
-    ru: "Условия использования сервиса QuickSend - правила и положения для пользователей",
-    en: "QuickSend Terms of Use - rules and regulations for users",
+    ru: "Условия использования сервиса Recru - правила и положения для пользователей",
+    en: "Recru Terms of Use - rules and regulations for users",
   };
 
   return {

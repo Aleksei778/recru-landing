@@ -47,37 +47,34 @@ export default function PricingContent({ lang }: PricingContentProps) {
       annualPriceEn: 0,
       features: [
         {
-          textRu: "Работает внутри Gmail",
-          textEn: "Works inside Gmail",
+          textRu: "3 активные вакансии",
+          textEn: "3 active vacancies",
           included: true,
         },
         {
-          textRu: "50 получателей/день",
-          textEn: "50 emails/day",
-          included: true,
-        },
-        { textRu: "10 Писем", textEn: "10 Campaigns", included: true },
-        {
-          textRu: "Базовая персонализация",
-          textEn: "Basic personalization",
+          textRu: "50 кандидатов/месяц",
+          textEn: "50 candidates/month",
           included: true,
         },
         {
-          textRu: "Подключение таблиц",
-          textEn: "Spreadsheet integration",
+          textRu: "Базовый парсинг резюме",
+          textEn: "Basic resume parsing",
+          included: true,
+        },
+        {
+          textRu: "AI-скрининг",
+          textEn: "AI screening",
           included: false,
         },
         {
-          textRu: "Верификация почты",
-          textEn: "Email verification",
+          textRu: "Аналитика найма",
+          textEn: "Recruitment analytics",
           included: false,
         },
-        { textRu: "Последовательности", textEn: "Sequences", included: false },
-        { textRu: "Email поддержка", textEn: "Email support", included: true },
         {
-          textRu: "Приоритетная поддержка",
-          textEn: "Priority support",
-          included: false,
+          textRu: "Email поддержка",
+          textEn: "Email support",
+          included: true,
         },
       ],
     },
@@ -93,37 +90,30 @@ export default function PricingContent({ lang }: PricingContentProps) {
       isPopular: true,
       features: [
         {
-          textRu: "Работает внутри Gmail",
-          textEn: "Works inside Gmail",
+          textRu: "10 активных вакансий",
+          textEn: "10 active vacancies",
           included: true,
         },
         {
-          textRu: "500 получателей/день",
-          textEn: "500 emails/day",
-          included: true,
-        },
-        { textRu: "500 Писем", textEn: "500 Campaigns", included: true },
-        {
-          textRu: "Расширенная персонализация",
-          textEn: "Advanced personalization",
+          textRu: "200 кандидатов/месяц",
+          textEn: "200 candidates/month",
           included: true,
         },
         {
-          textRu: "Подключение таблиц",
-          textEn: "Spreadsheet integration",
+          textRu: "Продвинутый парсинг резюме",
+          textEn: "Advanced resume parsing",
           included: true,
         },
         {
-          textRu: "Верификация почты",
-          textEn: "Email verification",
+          textRu: "AI-скрининг кандидатов",
+          textEn: "AI candidate screening",
           included: true,
         },
         {
-          textRu: "Базовые последовательности",
-          textEn: "Basic sequences",
+          textRu: "Аналитика и отчеты",
+          textEn: "Analytics & reports",
           included: true,
         },
-        { textRu: "Email поддержка", textEn: "Email support", included: true },
         {
           textRu: "Приоритетная поддержка",
           textEn: "Priority support",
@@ -142,44 +132,33 @@ export default function PricingContent({ lang }: PricingContentProps) {
       annualPriceEn: 16.8,
       features: [
         {
-          textRu: "Работает внутри Gmail",
-          textEn: "Works inside Gmail",
+          textRu: "Неограниченные вакансии",
+          textEn: "Unlimited vacancies",
           included: true,
         },
         {
-          textRu: "Безлимитные письма",
-          textEn: "Unlimited emails",
+          textRu: "Неограниченные кандидаты",
+          textEn: "Unlimited candidates",
           included: true,
         },
         {
-          textRu: "Безлимитные кампании",
-          textEn: "Unlimited campaigns",
+          textRu: "AI-ассистент рекрутера",
+          textEn: "AI recruiter assistant",
           included: true,
         },
         {
-          textRu: "Продвинутая персонализация",
-          textEn: "Advanced personalization",
+          textRu: "Расширенная аналитика",
+          textEn: "Advanced analytics",
           included: true,
         },
         {
-          textRu: "Подключение таблиц",
-          textEn: "Advanced spreadsheet integration",
+          textRu: "Интеграции (API)",
+          textEn: "Integrations (API)",
           included: true,
         },
         {
-          textRu: "Продвинутая верификация",
-          textEn: "Advanced verification",
-          included: true,
-        },
-        {
-          textRu: "Продвинутые последовательности",
-          textEn: "Advanced sequences",
-          included: true,
-        },
-        { textRu: "Email поддержка", textEn: "Email support", included: true },
-        {
-          textRu: "Приоритетная поддержка",
-          textEn: "Priority support",
+          textRu: "Персональный менеджер",
+          textEn: "Personal manager",
           included: true,
         },
       ],
@@ -211,11 +190,11 @@ export default function PricingContent({ lang }: PricingContentProps) {
 
   return (
     <div className={theme === "dark" ? "dark" : ""}>
-      <div className="min-h-screen bg-linear-to-b from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 transition-colors">
+      <div className="min-h-screen bg-white dark:bg-black transition-colors">
         <main className="pt-24 pb-32 px-4 relative">
           <div className="absolute inset-x-0 bottom-0 h-[600px] pointer-events-none overflow-hidden">
-            <div className="absolute inset-0 bg-linear-to-t from-gray-50 via-transparent to-transparent dark:from-gray-900 dark:via-transparent z-10 opacity-70"></div>
-            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full opacity-40 dark:opacity-30">
+            <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent dark:from-black dark:via-transparent z-10 opacity-70"></div>
+            <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full opacity-40 dark:opacity-30 grayscale">
               <Image
                 src="/images/businesswoman.png"
                 alt="Background"
@@ -227,45 +206,45 @@ export default function PricingContent({ lang }: PricingContentProps) {
           </div>
 
           <div className="container mx-auto max-w-7xl relative z-20">
-            <div className="relative bg-linear-to-r from-blue-500 via-cyan-400 to-[#AEE5C2] dark:from-blue-600 dark:via-cyan-500 dark:to-[#8ED8A8] rounded-2xl p-8 md:p-12 mb-12 text-center overflow-hidden">
-              <div className="absolute inset-0 bg-linear-to-r from-blue-400/20 via-cyan-300/20 to-[#AEE5C2]/20"></div>
-              <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/10 to-transparent animate-shimmer"></div>
+            <div className="relative bg-black dark:bg-white rounded-2xl p-8 md:p-12 mb-12 text-center overflow-hidden">
+              <div className="absolute inset-0 bg-gray-800/20 dark:bg-gray-200/20"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-700/10 dark:via-gray-300/10 to-transparent animate-shimmer"></div>
 
-              <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 relative z-10">
+              <h1 className="text-4xl md:text-5xl font-bold text-white dark:text-black mb-4 relative z-10">
                 {t("pricing")}
               </h1>
             </div>
 
-            <p className="text-center text-gray-600 dark:text-gray-400 mb-6">
+            <p className="text-center text-gray-700 dark:text-gray-300 mb-6">
               {t("pricingSub")}
             </p>
 
             <div className="flex items-center justify-center gap-4 mb-12">
               <span
-                className={`font-medium ${!isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
+                className={`font-medium ${!isAnnual ? "text-black dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
               >
                 {t("monthly")}
               </span>
               <button
                 onClick={() => setIsAnnual(!isAnnual)}
-                className="group relative w-14 h-7 rounded-full bg-linear-to-r from-gray-300 to-gray-400 dark:from-gray-600 dark:to-gray-700 overflow-hidden transition-all duration-300 hover:shadow-lg"
+                className="group relative w-14 h-7 rounded-full bg-gray-300 dark:bg-gray-700 overflow-hidden transition-all duration-300 hover:shadow-lg"
               >
                 <div
-                  className={`absolute inset-0 bg-linear-to-r from-blue-500 to-cyan-400 transition-opacity duration-300 ${isAnnual ? "opacity-100" : "opacity-0"}`}
+                  className={`absolute inset-0 bg-black dark:bg-white transition-opacity duration-300 ${isAnnual ? "opacity-100" : "opacity-0"}`}
                 ></div>
                 <span
-                  className={`absolute top-1 left-1 w-5 h-5 bg-white rounded-full transition-transform duration-300 shadow-md ${
+                  className={`absolute top-1 left-1 w-5 h-5 bg-white dark:bg-black rounded-full transition-transform duration-300 shadow-md ${
                     isAnnual ? "translate-x-7" : "translate-x-0"
                   }`}
                 />
               </button>
               <div className="flex items-center gap-2">
                 <span
-                  className={`font-medium ${isAnnual ? "text-gray-900 dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
+                  className={`font-medium ${isAnnual ? "text-black dark:text-white" : "text-gray-500 dark:text-gray-400"}`}
                 >
                   {t("annually")}
                 </span>
-                <span className="px-2 py-1 bg-linear-to-r from-blue-500 to-cyan-400 text-white text-xs rounded-full font-semibold">
+                <span className="px-2 py-1 bg-black dark:bg-white text-white dark:text-black text-xs rounded-full font-semibold">
                   {t("save")}
                 </span>
               </div>
@@ -277,40 +256,38 @@ export default function PricingContent({ lang }: PricingContentProps) {
                 return (
                   <div
                     key={plan.id}
-                    className={`relative rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl ${
+                    className={`relative rounded-2xl p-8 transition-all duration-300 hover:shadow-2xl bg-white dark:bg-gray-900 ${
                       plan.isPopular
-                        ? "border-2 border-blue-400/50"
-                        : "border border-gray-200/30 dark:border-gray-700/30"
+                        ? "border-2 border-black dark:border-white"
+                        : "border-2 border-gray-200 dark:border-gray-800"
                     }`}
                   >
-                    <div className="absolute inset-0 bg-white/30 dark:bg-gray-800/30 backdrop-blur-sm rounded-2xl"></div>
-
                     {plan.isPopular && (
                       <div className="absolute -top-3 left-1/2 -translate-x-1/2 z-30">
-                        <div className="bg-linear-to-r from-blue-500 to-cyan-400 text-white px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg whitespace-nowrap">
+                        <div className="bg-black dark:bg-white text-white dark:text-black px-4 py-1.5 rounded-full text-sm font-semibold shadow-lg whitespace-nowrap">
                           {t("mostPopular")}
                         </div>
                       </div>
                     )}
 
                     {plan.isPopular && (
-                      <div className="absolute inset-0 bg-linear-to-br from-blue-500/10 via-cyan-400/10 to-[#AEE5C2]/10 rounded-2xl"></div>
+                      <div className="absolute inset-0 bg-black/5 dark:bg-white/5 rounded-2xl"></div>
                     )}
 
                     <div className="relative z-10">
                       <div className="mb-6">
                         <div className="flex items-center gap-3 mb-4">
                           <div className="relative">
-                            <div className="absolute inset-0 bg-linear-to-br from-blue-500 to-cyan-400 blur-md opacity-30"></div>
-                            <Icon className="w-8 h-8 text-blue-600 dark:text-blue-400 relative" />
+                            <div className="absolute inset-0 bg-black dark:bg-white blur-md opacity-20"></div>
+                            <Icon className="w-8 h-8 text-black dark:text-white relative" />
                           </div>
-                          <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                          <h2 className="text-2xl font-bold text-black dark:text-white">
                             {getPlanName(plan)}
                           </h2>
                         </div>
 
                         <div className="text-center py-4">
-                          <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
+                          <div className="text-4xl font-bold text-black dark:text-white mb-2">
                             {getPrice(plan)}
                           </div>
                           {isAnnual && plan.id !== "trial" && (
@@ -327,19 +304,19 @@ export default function PricingContent({ lang }: PricingContentProps) {
                             key={idx}
                             className={`flex items-start gap-3 ${
                               feature.included
-                                ? "text-gray-800 dark:text-gray-200"
-                                : "text-gray-500 dark:text-gray-500"
+                                ? "text-black dark:text-white"
+                                : "text-gray-400 dark:text-gray-600"
                             }`}
                           >
                             {feature.included ? (
                               <div className="relative shrink-0 mt-0.5">
-                                <Check className="w-5 h-5 text-green-500 relative z-10" />
-                                <div className="absolute inset-0 bg-green-500 blur-sm opacity-20"></div>
+                                <Check className="w-5 h-5 text-black dark:text-white relative z-10" />
+                                <div className="absolute inset-0 bg-black dark:bg-white blur-sm opacity-20"></div>
                               </div>
                             ) : (
                               <div className="relative shrink-0 mt-0.5">
-                                <X className="w-5 h-5 text-red-500 relative z-10" />
-                                <div className="absolute inset-0 bg-red-500 blur-sm opacity-20"></div>
+                                <X className="w-5 h-5 text-gray-400 dark:text-gray-600 relative z-10" />
+                                <div className="absolute inset-0 bg-gray-400 dark:bg-gray-600 blur-sm opacity-20"></div>
                               </div>
                             )}
                             <span className="text-sm">
@@ -352,11 +329,11 @@ export default function PricingContent({ lang }: PricingContentProps) {
                       <button
                         className={`group relative w-full py-3 rounded-lg font-semibold transition-all duration-300 overflow-hidden ${
                           plan.isPopular
-                            ? "bg-linear-to-r from-blue-500 to-cyan-400 text-white hover:from-blue-600 hover:to-cyan-500"
-                            : "bg-linear-to-r from-gray-800 to-gray-700 dark:from-gray-700 dark:to-gray-600 text-white hover:from-gray-900 hover:to-gray-800 dark:hover:from-gray-600 dark:hover:to-gray-500"
+                            ? "bg-black dark:bg-white text-white dark:text-black hover:bg-gray-800 dark:hover:bg-gray-200"
+                            : "bg-gray-800 dark:bg-gray-700 text-white hover:bg-black dark:hover:bg-gray-600"
                         }`}
                       >
-                        <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-gray-700/20 dark:via-gray-300/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
 
                         <span className="relative">
                           {plan.id === "trial"

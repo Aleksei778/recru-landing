@@ -21,39 +21,33 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    ru: "QuickSend: чтобы отправлять письма",
-    en: "QuickSend: to send emails",
+    ru: "Recru: чтобы нанимать быстрее",
+    en: "Recru: to hire faster",
   };
 
   const descriptions = {
-    ru: "QuickSend - это современный почтовый сервис, который помогает рассылать массовые кампании с минимальным процентом попадания писем в спам",
-    en: "QuickSend is a modern email service that helps send mass campaigns with minimal spam rate",
+    ru: "Recru - это современная ATS-система с автоматизированным техническим скринингом кандидатов",
+    en: "Recru is a modern ATS system with automated technical screening of candidates",
   };
 
   return {
     title: titles[lang as Language],
     description: descriptions[lang as Language],
-    keywords: [
-      "email marketing",
-      "mass email",
-      "cold emails",
-      "email campaigns",
-      "QuickSend",
-    ],
-    authors: [{ name: "QuickSend Team" }],
+    keywords: ["ats", "hiring", "hiring candidates", "candidates", "Recru"],
+    authors: [{ name: "Recru Team" }],
     openGraph: {
       type: "website",
       locale: lang === "ru" ? "ru_RU" : "en_US",
-      url: `https://quicksend-next.vercel.app/${lang}`,
-      siteName: "QuickSend",
+      url: `https://recru-landing.vercel.app/${lang}`,
+      siteName: "Recru",
       title: titles[lang as Language],
       description: descriptions[lang as Language],
       images: [
         {
-          url: "/logo-color.png", // создайте это изображение 1200x630
+          url: "/logo-color.png",
           width: 1200,
           height: 630,
-          alt: "QuickSend",
+          alt: "Recru",
         },
       ],
     },
@@ -64,10 +58,10 @@ export async function generateMetadata({
       images: ["/logo-color.png"],
     },
     alternates: {
-      canonical: `https://quicksend-next.vercel.app/${lang}`,
+      canonical: `https://recru-landing.vercel.app/${lang}`,
       languages: {
-        en: "https://quicksend-next.vercel.app/en",
-        ru: "https://quicksend-next.vercel.app/ru",
+        en: "https://recru-landing.vercel.app/en",
+        ru: "https://recru-landing.vercel.app/ru",
       },
     },
   };
@@ -102,7 +96,7 @@ export default async function RootLayout({
             <AuthProvider>
               <Header />
               {children}
-                <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+              <div className="w-full h-px bg-black dark:bg-white rounded-full" />
               <Footer />
             </AuthProvider>
           </LanguageProvider>

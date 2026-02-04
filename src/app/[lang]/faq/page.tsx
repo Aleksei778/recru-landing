@@ -10,13 +10,13 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    ru: "FAQ - QuickSend",
-    en: "FAQ - QuickSend",
+    ru: "FAQ - Recru",
+    en: "FAQ - Recru",
   };
 
   const descriptions = {
-    ru: "Часто задаваемые вопросы о QuickSend - все ответы на ваши вопросы о массовых email-рассылках",
-    en: "Frequently Asked Questions about QuickSend - all answers about mass email campaigns",
+    ru: "Часто задаваемые вопросы о Recru - все ответы на ваши вопросы о массовом найме",
+    en: "Frequently Asked Questions about Recru - all answers about mass hiring",
   };
 
   return {

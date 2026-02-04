@@ -47,7 +47,7 @@ export default function TabDangerZone({ email }: { email: string }) {
         const url = URL.createObjectURL(blob);
         const a = document.createElement("a");
         a.href = url;
-        a.download = `quicksend-data-${new Date().toISOString().split("T")[0]}.json`;
+        a.download = `recru-data-${new Date().toISOString().split("T")[0]}.json`;
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);

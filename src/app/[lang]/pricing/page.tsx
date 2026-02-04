@@ -9,13 +9,13 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    ru: "Тарифы и цены - QuickSend",
-    en: "Plans & Pricing - QuickSend",
+    ru: "Тарифы и цены - Recru",
+    en: "Plans & Pricing - Recru",
   };
 
   const descriptions = {
-    ru: "Выберите подходящий тариф QuickSend для массовых email-рассылок. Гибкие планы от бесплатного до премиум",
-    en: "Choose the right QuickSend plan for mass email campaigns. Flexible plans from free to premium",
+    ru: "Выберите подходящий тариф Recru для массового найма. Гибкие планы от бесплатного до премиум",
+    en: "Choose the right Recru plan for mass hiring. Flexible plans from free to premium",
   };
 
   return {

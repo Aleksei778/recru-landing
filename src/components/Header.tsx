@@ -46,7 +46,7 @@ export default function Header() {
 
   return (
     <header className="fixed top-0 w-full bg-white/95 dark:bg-black/95 backdrop-blur-md shadow-sm z-50 border-b border-gray-200 dark:border-gray-800">
-        <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
+      <div className="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
         {/* LOGO */}
         <Link href={`/${language}`} className="flex items-center z-50">
           <h1
@@ -59,7 +59,7 @@ export default function Header() {
         {/* NAV — Desktop */}
         <nav className="hidden md:flex space-x-6 lg:space-x-8 font-medium">
           <Link
-            href={`/${language}#whyquicksend`}
+            href={`/${language}#whyrecru`}
             className="relative text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-all duration-300 group"
           >
             {t("header.aboutUs")}
@@ -210,7 +210,7 @@ export default function Header() {
           {/* Меню навигации */}
           <nav className="flex-1 space-y-6 font-medium">
             <Link
-              href={`/${language}#whyquicksend`}
+              href={`/${language}#whyrecru`}
               className="block text-2xl font-semibold text-gray-800 dark:text-white hover:text-black dark:hover:text-gray-300 transition-colors"
               onClick={() => setMobileOpen(false)}
             >
@@ -345,7 +345,7 @@ export default function Header() {
           </div>
         </div>
       </div>
-        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+      <div className="w-full h-px bg-black dark:bg-white rounded-full" />
     </header>
   );
 }

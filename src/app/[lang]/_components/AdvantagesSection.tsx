@@ -31,7 +31,7 @@ export function AdvantagesSection() {
   ];
   return (
     <section
-      id="whyquicksend"
+      id="whyrecru"
       className="
         py-16 px-4 
         bg-white dark:bg-black
@@ -62,22 +62,22 @@ export function AdvantagesSection() {
                   <div
                     key={i}
                     className="
-                      bg-black dark:bg-white
-                      border border-gray-300 dark:border-gray-700
+                      bg-white dark:bg-gray-800
+                      border border-black dark:border-white
                       p-5 sm:p-6
                       rounded-xl
-                      hover:shadow-2xl hover:border-black dark:hover:border-white
+                      hover:shadow-2xl
                       transition-all duration-300
                       text-center
                     "
                   >
                     <div className="flex justify-center mb-3">
-                      <Icon className="w-9 h-9 text-white dark:text-black" />
+                      <Icon className="w-9 h-9 text-black dark:text-white" />
                     </div>
-                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-white dark:text-black">
+                    <h3 className="text-lg sm:text-xl font-semibold mb-2 text-black dark:text-white">
                       {t(a.titleKey)}
                     </h3>
-                    <p className="text-gray-300 dark:text-gray-800 text-sm sm:text-base">
+                    <p className="text-gray-800 dark:text-gray-300 text-sm sm:text-base">
                       {t(a.descKey)}
                     </p>
                   </div>

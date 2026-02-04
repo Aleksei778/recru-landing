@@ -18,16 +18,16 @@ export default async function Home({
     <div className="relative z-10">
       <main className="grow">
         <HeroSection />
-          <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
         <AdvantagesSection />
-          <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
         <ProductsSection />
-          <div className="w-full h-px bg-black dark:bg-white rounded-full" />
-          <DspTakedownSection />
-          <div className="w-full h-px bg-black dark:bg-white rounded-full" />
-          <StatsSection />
-          <div className="w-full h-px bg-black dark:bg-white rounded-full" />
-          <ContactSection />
+        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+        <DspTakedownSection />
+        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+        <StatsSection />
+        <div className="w-full h-px bg-black dark:bg-white rounded-full" />
+        <ContactSection />
       </main>
     </div>
   );

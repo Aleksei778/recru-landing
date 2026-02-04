@@ -9,13 +9,13 @@ export async function generateMetadata({
   const { lang } = await params;
 
   const titles = {
-    ru: "Политика конфиденциальности - QuickSend",
-    en: "Privacy Policy - QuickSend",
+    ru: "Политика конфиденциальности - Recru",
+    en: "Privacy Policy - Recru",
   };
 
   const descriptions = {
-    ru: "Политика конфиденциальности QuickSend - как мы защищаем ваши данные и обрабатываем информацию",
-    en: "QuickSend Privacy Policy - how we protect your data and handle information",
+    ru: "Политика конфиденциальности Recru - как мы защищаем ваши данные и обрабатываем информацию",
+    en: "Recru Privacy Policy - how we protect your data and handle information",
   };
 
   return {

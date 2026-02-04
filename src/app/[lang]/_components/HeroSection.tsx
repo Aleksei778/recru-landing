@@ -3,7 +3,7 @@ import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/useTranslation";
 import Link from "next/link";
 import Image from "next/image";
-import {Player} from "@lottiefiles/react-lottie-player";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 export function HeroSection() {
   const { language } = useLanguage();
@@ -57,7 +57,7 @@ export function HeroSection() {
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 dark:via-black/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </Link>
               <Link
-                href={`/${language}#whyquicksend`}
+                href={`/${language}#whyrecru`}
                 className="group relative px-8 py-4 rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
               >
                 <div className="absolute inset-0 bg-gray-100/50 dark:bg-gray-800/50 backdrop-blur-sm"></div>
@@ -92,17 +92,17 @@ export function HeroSection() {
           <div className="relative w-[320px] h-[320px] lg:w-[370px] lg:h-[590px] flex-shrink-0 order-1 lg:order-1 mt-auto">
             <div className="absolute inset-0 bg-gradient-to-br from-gray-300/30 dark:from-gray-300/30 to-transparent rounded-full blur-3xl animate-pulse"></div>
             <div className="absolute -inset-4 bg-gradient-to-r from-gray-400/20 dark:from-gray-600/20 to-transparent rounded-full blur-lg"></div>
-              <Player
-                  autoplay
-                  loop
-                  src="/animations/business-workshop.json"
-                  style={{
-                      width: "100%",
-                      height: "auto",
-                      maxWidth: "600px",
-                      maxHeight: "600px",
-                  }}
-              />
+            <Player
+              autoplay
+              loop
+              src="/animations/business-workshop.json"
+              style={{
+                width: "100%",
+                height: "auto",
+                maxWidth: "600px",
+                maxHeight: "600px",
+              }}
+            />
           </div>
 
           {/*<div className="relative w-[380px] h-[420px] lg:w-[490px] lg:h-[600px] flex-shrink-0 order-3 lg:order-3 mt-auto lg:mr-[-120px]">*/}
