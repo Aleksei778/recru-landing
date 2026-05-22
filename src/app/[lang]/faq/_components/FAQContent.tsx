@@ -58,23 +58,23 @@ export default function FAQContent({ lang }: FAQContentProps) {
       ],
     },
     {
-      topic: "faq.topics.sending",
+      topic: "faq.topics.candidates",
       questions: [
         {
-          q: "faq.questions.sending.testEmail",
-          a: "faq.answers.sending.testEmail",
+          q: "faq.questions.candidates.createPosition",
+          a: "faq.answers.candidates.createPosition",
         },
         {
-          q: "faq.questions.sending.attachments",
-          a: "faq.answers.sending.attachments",
+          q: "faq.questions.candidates.attachments",
+          a: "faq.answers.candidates.attachments",
         },
         {
-          q: "faq.questions.sending.server",
-          a: "faq.answers.sending.server",
+          q: "faq.questions.candidates.notifications",
+          a: "faq.answers.candidates.notifications",
         },
         {
-          q: "faq.questions.sending.limits",
-          a: "faq.answers.sending.limits",
+          q: "faq.questions.candidates.limits",
+          a: "faq.answers.candidates.limits",
         },
       ],
     },
@@ -135,7 +135,7 @@ export default function FAQContent({ lang }: FAQContentProps) {
             {t("faq.title")}
           </h1>
           <p className="text-gray-600 dark:text-gray-400">
-            {t("faq.lastUpdated")} {new Date().toLocaleDateString()}
+            {t("faq.lastUpdated")} {new Date().toISOString().split("T")[0]}
           </p>
         </section>
 

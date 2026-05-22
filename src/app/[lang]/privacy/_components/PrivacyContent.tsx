@@ -22,7 +22,7 @@ export default function PrivacyContent({ lang }: PrivacyContentProps) {
                 {t("privacy.title")}
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                {t("privacy.lastUpdated")} {new Date().toLocaleDateString()}
+                {t("privacy.lastUpdated")} {new Date().toISOString().split("T")[0]}
               </p>
             </div>
 
@@ -43,10 +43,10 @@ export default function PrivacyContent({ lang }: PrivacyContentProps) {
 
                 <section>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    {t("privacy.emailLists")}
+                    {t("privacy.candidateData")}
                   </h2>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {t("privacy.emailListsText")}
+                    {t("privacy.candidateDataText")}
                   </p>
                 </section>
 
@@ -92,10 +92,10 @@ export default function PrivacyContent({ lang }: PrivacyContentProps) {
 
                 <section>
                   <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    {t("privacy.emailWarmup")}
+                    {t("privacy.dataSecurity")}
                   </h2>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-                    {t("privacy.emailWarmupText")}
+                    {t("privacy.dataSecurityText")}
                   </p>
                 </section>
               </div>

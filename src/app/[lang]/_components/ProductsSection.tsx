@@ -19,18 +19,18 @@ export function ProductsSection() {
   const products = [
     {
       icon: Users,
-      titleKey: "products.massEmails",
-      descKey: "products.massEmailsDesc",
+      titleKey: "products.aiScreening",
+      descKey: "products.aiScreeningDesc",
     },
     {
       icon: FileText,
-      titleKey: "products.mailMerge",
-      descKey: "products.mailMergeDesc",
+      titleKey: "products.jobManagement",
+      descKey: "products.jobManagementDesc",
     },
     {
       icon: Bot,
-      titleKey: "products.emailVerification",
-      descKey: "products.emailVerificationDesc",
+      titleKey: "products.resumeParsing",
+      descKey: "products.resumeParsingDesc",
     },
     {
       icon: Calendar,
@@ -39,13 +39,13 @@ export function ProductsSection() {
     },
     {
       icon: TrendingUp,
-      titleKey: "products.personalization",
-      descKey: "products.personalizationDesc",
+      titleKey: "products.hiringFunnel",
+      descKey: "products.hiringFunnelDesc",
     },
     {
       icon: Bell,
-      titleKey: "products.followUps",
-      descKey: "products.followUpsDesc",
+      titleKey: "products.notifications",
+      descKey: "products.notificationsDesc",
     },
   ];
 
@@ -115,7 +115,7 @@ export function ProductsSection() {
 
         <div className="text-center mt-16">
           <Link
-            href={`/${language}/profile`}
+            href="https://recru-hr.vercel.app"
             className="group relative inline-flex items-center justify-center px-8 py-4 rounded-2xl overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl bg-black dark:bg-white"
           >
             <div className="absolute inset-0 bg-gray-800 dark:bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>

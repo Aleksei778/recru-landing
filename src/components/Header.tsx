@@ -2,17 +2,15 @@
 
 import { useTheme } from "@/contexts/theme-context";
 import { useLanguage } from "@/contexts/language-context";
-import { useSession } from "next-auth/react";
 import Link from "next/link";
 import { nauryzRedKeds } from "@/lib/font";
-import { Globe, UserCircle, Moon, Sun, Menu, X } from "lucide-react";
+import { Globe, Moon, Sun, Menu, X } from "lucide-react";
 import { useTranslation } from "@/hooks/useTranslation";
 import { useState } from "react";
 
 export default function Header() {
   const { language, toggleLanguage } = useLanguage();
   const { theme, toggleTheme } = useTheme();
-  const { data: session } = useSession();
   const { t } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
 
@@ -90,25 +88,16 @@ export default function Header() {
           </button>
 
           {/* Auth */}
-          {!session ? (
-            <Link
-              href="https://recru-hr.vercel.app"
-              className="group relative px-5 py-2.5 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20"
-            >
-              <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
-              <span className="relative text-white dark:text-black font-semibold text-sm">
-                {t("tryRecru")}
-              </span>
-            </Link>
-          ) : (
-            <Link
-              href={`/${language}/profile`}
-              className="p-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-full transition-all duration-300"
-            >
-              <UserCircle className="w-6 h-6 text-gray-700 dark:text-gray-400" />
-            </Link>
-          )}
+          <Link
+            href="https://recru-hr.vercel.app"
+            className="group relative px-5 py-2.5 rounded-xl overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-gray-500/20"
+          >
+            <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 dark:via-black/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            <span className="relative text-white dark:text-black font-semibold text-sm">
+              {t("tryRecru")}
+            </span>
+          </Link>
         </div>
 
         {/* MOBILE BURGER */}
@@ -204,29 +193,16 @@ export default function Header() {
               </div>
             </div>
 
-            {!session ? (
-              <Link
-                href="https://recru-hr.vercel.app"
-                className="group relative block px-6 py-4 text-center rounded-xl overflow-hidden transition-all duration-300"
-                onClick={() => setMobileOpen(false)}
-              >
-                <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
-                <span className="relative text-white dark:text-black font-semibold text-lg">
-                  {t("tryRecru")}
-                </span>
-              </Link>
-            ) : (
-              <Link
-                href="https://recru-hr.vercel.app"
-                className="flex items-center justify-center gap-3 px-6 py-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
-                onClick={() => setMobileOpen(false)}
-              >
-                <UserCircle className="w-7 h-7 text-gray-700 dark:text-gray-300" />
-                <span className="text-lg font-medium text-gray-800 dark:text-white">
-                  {t("profile.profileInfo") || "Профиль"}
-                </span>
-              </Link>
-            )}
+            <Link
+              href="https://recru-hr.vercel.app"
+              className="group relative block px-6 py-4 text-center rounded-xl overflow-hidden transition-all duration-300"
+              onClick={() => setMobileOpen(false)}
+            >
+              <div className="absolute inset-0 bg-black dark:bg-white group-hover:bg-gray-800 dark:group-hover:bg-gray-200 transition-all duration-500"></div>
+              <span className="relative text-white dark:text-black font-semibold text-lg">
+                {t("tryRecru")}
+              </span>
+            </Link>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function TermsContent({ lang }: TermsContentProps) {
                 {t("terms.title")}
               </h1>
               <p className="text-gray-600 dark:text-gray-400">
-                {t("terms.lastUpdated")} {new Date().toLocaleDateString()}
+                {t("terms.lastUpdated")} {new Date().toISOString().split("T")[0]}
               </p>
             </div>
 
@@ -58,23 +58,23 @@ export default function TermsContent({ lang }: TermsContentProps) {
 
                   <section>
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                      {t("terms.antiSpam")}
+                      {t("terms.dataUsage")}
                     </h2>
-                    {formatText(t("terms.antiSpamText"))}
+                    {formatText(t("terms.dataUsageText"))}
                   </section>
 
                   <section>
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                      {t("terms.buttonVsSend")}
+                      {t("terms.userResponsibility")}
                     </h2>
-                    {formatText(t("terms.buttonVsSendText"))}
+                    {formatText(t("terms.userResponsibilityText"))}
                   </section>
 
                   <section>
                     <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                      {t("terms.sendingLimits")}
+                      {t("terms.usageLimits")}
                     </h2>
-                    {formatText(t("terms.sendingLimitsText"))}
+                    {formatText(t("terms.usageLimitsText"))}
                   </section>
 
                   <section>

@@ -179,7 +179,7 @@ export function RecruitmentSection() {
           </div>
 
           <a
-            href={`/${language}/profile`}
+            href="https://recru-hr.vercel.app"
             className="group relative inline-flex items-center justify-center px-8 py-4 rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-2xl bg-black dark:bg-white"
           >
             <div className="absolute inset-0 bg-gray-800 dark:bg-gray-200 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
