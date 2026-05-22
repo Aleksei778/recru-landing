@@ -1,9 +1,14 @@
 "use client";
 import { useLanguage } from "@/contexts/language-context";
 import { useTranslation } from "@/hooks/useTranslation";
+import dynamic from "next/dynamic";
 import Link from "next/link";
 import Image from "next/image";
-import { Player } from "@lottiefiles/react-lottie-player";
+
+const Player = dynamic(
+  () => import("@lottiefiles/react-lottie-player").then((mod) => mod.Player),
+  { ssr: false },
+);
 
 export function HeroSection() {
   const { language } = useLanguage();
